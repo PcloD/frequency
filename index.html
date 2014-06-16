@@ -1,0 +1,60 @@
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		html, body{
+			margin:0px;
+			padding:10px;
+			font-family: "Open Sans";
+		}
+		#items li{
+			color:#ddd;
+			font-weight: 700;
+			list-style: none;
+			width:200px;
+			height:100px;
+			box-sizing:border-box;
+			padding:10px;
+			display:inline-block;
+			vertical-align: top;
+			border:1px dashed #eee;
+			text-align: center;
+		}
+		#items{
+			padding-left:20px;
+		}
+		@-webkit-keyframes tick{
+			0%{color:#000;}
+			100%{color:#ddd;}
+		}
+	</style>
+</head>
+<body>
+	<center><h1>FREQUENCY</h1></center>
+	<ul id="items"></ul>
+	<script>
+		var items = [
+			{text: "A second passes", freq: 1000},
+			{text: "Heartbeat", freq: 900},
+			{text: "An animal is killed in an experiment", freq: 312.5},
+			{text: "5000 animals slaughtered on factory farms", freq: 1555},
+			{text: "Somebody dies", freq: 555},
+			{text: "Somebody is born", freq: 238},
+			{text: "115 trees are cut down", freq: 1000},
+			{text: "5 million emails sent", freq: 1786},
+			{text: "50000 google searches", freq: 4348},
+			{text: "50000 facebook posts", freq: 4348},
+			{text: "5000 tweets", freq: 1270},
+			{text: "5 new websites are created", freq: 1060},
+			{text: "35000 Coca-cola products consumed", freq: 5000},
+		]
+
+		for(var i = 0; i < items.length; i++){
+			var element = document.createElement('li');
+			element.textContent = items[i].text;
+			element.style.webkitAnimation = "tick "+(items[i].freq/1000)+"s ease 0s infinite";
+			document.querySelector('#items').appendChild(element);
+		}
+	</script>
+</body>
+</html>
