@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<script src="prefixfree.min.js"></script>
 	<style>
 		html, body{
 			margin:0px;
@@ -23,7 +24,7 @@
 		#items{
 			padding-left:20px;
 		}
-		@-webkit-keyframes tick{
+		@keyframes tick{
 			0%{color:#000;}
 			100%{color:#ddd;}
 		}
@@ -48,13 +49,16 @@
 			{text: "5 new websites are created", freq: 1060},
 			{text: "35000 Coca-cola products consumed", freq: 5000},
 		]
-
+		var style = document.createElement('style');
 		for(var i = 0; i < items.length; i++){
 			var element = document.createElement('li');
 			element.textContent = items[i].text;
-			element.style.webkitAnimation = "tick "+(items[i].freq/1000)+"s ease 0s infinite";
+			element.classList.add('e'+(i+1))
+			style.textContent+='.e'+(i+1)+'{animation: tick '+(items[i].freq/1000)+'s ease 0s infinite}\n';
+			//element.style.animation = "tick "+(items[i].freq/1000)+"s ease 0s infinite";
 			document.querySelector('#items').appendChild(element);
 		}
+		document.querySelector('head').appendChild(style);
 	</script>
 </body>
 </html>
