@@ -21,7 +21,7 @@
 			padding:10px;
 			display:inline-block;
 			vertical-align: top;
-			border:1px dashed #eee;
+			outline:1px dashed #eee;
 			text-align: center;
 		}
 		#items{
@@ -36,6 +36,15 @@
 <body>
 	<center><h1>FREQUENCY</h1>Inspired by <a target="_blank" href="http://xkcd.com/1331/">xkcd</a></center>
 	<ul id="items"></ul>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-48179034-3', 'azlen.github.io');
+	  ga('send', 'pageview');
+	</script>
 	<script>
 		var items = [
 			{text: "A second passes", freq: 1000},
@@ -61,6 +70,18 @@
 			{text: "100 lightning strikes", freq: 1000},
 			{text: "10 github commits", freq: 864},
 			{text: "A book is published", freq: 12500},
+			{text: "You take a breath", freq: 3750},
+			{text: "Your body produces 5 million red blood cells", freq: 2083},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
+			{text: "", freq: 0},
 		]
 		var style = document.createElement('style');
 		for(var i = 0; i < items.length; i++){
